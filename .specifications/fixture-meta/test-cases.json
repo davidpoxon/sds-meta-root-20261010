@@ -1,0 +1,71 @@
+{
+  "$schema": "https://roubo.dev/schema/testbench/test-cases/v1.1.0.json",
+  "schemaVersion": "1.1.0",
+  "specSlug": "fixture-meta",
+  "cases": [
+    {
+      "id": "FXM-TC-001",
+      "title": "Fixture unit S behaves as specified",
+      "area": "fixture",
+      "level": 1,
+      "type": "functional",
+      "preconditions": [
+        "The fixture spec is delivered up to unit S."
+      ],
+      "steps": [
+        {
+          "id": "S001",
+          "instruction": "Exercise fixture unit S",
+          "observations": [
+            {
+              "id": "S001-O01",
+              "expected": "Unit S behaves as specified"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "smoke",
+        "meta-repo"
+      ],
+      "linked_requirement_ids": [
+        "FXM-FR-001"
+      ],
+      "linked_user_story_ids": [
+        "FXM-US-001"
+      ]
+    },
+    {
+      "id": "FXM-TC-002",
+      "title": "Fixture unit R behaves as specified",
+      "area": "fixture",
+      "level": 1,
+      "type": "functional",
+      "preconditions": [
+        "The fixture spec is delivered up to unit R."
+      ],
+      "steps": [
+        {
+          "id": "S001",
+          "instruction": "Exercise fixture unit R",
+          "observations": [
+            {
+              "id": "S001-O01",
+              "expected": "Unit R behaves as specified"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "smoke",
+        "meta-repo"
+      ],
+      "linked_requirement_ids": [
+        "FXM-FR-001"
+      ],
+      "linked_user_story_ids": [
+        "FXM-US-001"
+      ]
+    }
+  ]
+}

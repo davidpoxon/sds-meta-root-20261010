@@ -1,0 +1,91 @@
+{
+  "$schema": "https://roubo.dev/schema/work-units/v1.0.0.json",
+  "schemaVersion": "1.0.0",
+  "specSlug": "fixture-meta",
+  "units": [
+    {
+      "id": "FXM-WU-001",
+      "title": "Fixture submodule unit S",
+      "type": "feature",
+      "description": "Fixture unit S changes the submodule `sub`.",
+      "acceptance_criteria": [
+        "Fixture submodule unit S is delivered."
+      ],
+      "milestone": "fixture-meta: Phase 1",
+      "labels": [
+        "P0",
+        "repo:sub"
+      ],
+      "depends_on": [],
+      "implements": {
+        "requirement_ids": [
+          "FXM-FR-001"
+        ],
+        "user_story_ids": [
+          "FXM-US-001"
+        ],
+        "test_case_ids": [
+          "FXM-TC-001"
+        ]
+      }
+    },
+    {
+      "id": "FXM-WU-002",
+      "title": "Fixture root unit R (depends on S)",
+      "type": "feature",
+      "description": "Fixture unit R changes the root and needs unit S in the submodule.",
+      "acceptance_criteria": [
+        "Fixture root unit R is delivered."
+      ],
+      "milestone": "fixture-meta: Phase 1",
+      "labels": [
+        "P0"
+      ],
+      "depends_on": [
+        "FXM-WU-001"
+      ],
+      "implements": {
+        "requirement_ids": [
+          "FXM-FR-001"
+        ],
+        "user_story_ids": [
+          "FXM-US-001"
+        ],
+        "test_case_ids": [
+          "FXM-TC-002"
+        ]
+      }
+    },
+    {
+      "id": "FXM-WU-003",
+      "title": "Verify gate: Phase 1 (after R)",
+      "type": "task",
+      "kind": "verify",
+      "description": "Fixture gate G of the meta-repository test spec.",
+      "acceptance_criteria": [
+        "Verify gate: Phase 1 is delivered."
+      ],
+      "milestone": "fixture-meta: Phase 1",
+      "labels": [
+        "verify",
+        "P0"
+      ],
+      "depends_on": [
+        "FXM-WU-001",
+        "FXM-WU-002"
+      ],
+      "implements": {
+        "requirement_ids": [
+          "FXM-FR-001"
+        ],
+        "user_story_ids": [
+          "FXM-US-001"
+        ],
+        "test_case_ids": [
+          "FXM-TC-001",
+          "FXM-TC-002"
+        ]
+      }
+    }
+  ]
+}

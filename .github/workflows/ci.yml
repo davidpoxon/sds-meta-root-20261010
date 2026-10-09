@@ -1,0 +1,18 @@
+name: submodule-checkout
+on:
+  pull_request:
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Submodule is checked out at the recorded pointer
+        run: |
+          expected="$(git ls-tree HEAD sub | awk '{print $3}')"
+          actual="$(git -C sub rev-parse HEAD)"
+          echo "gitlink=$expected checkout=$actual"
+          test -n "$expected" && test "$expected" = "$actual"
+      - name: The submodule change is in the checkout
+        run: test -f sub/impl/FXM-WU-001.txt
